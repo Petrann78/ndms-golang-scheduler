@@ -1,0 +1,13 @@
+{
+  "soil_moisture_percent": 33.5,
+  "water_level_m": 4.2,
+  "rainfall_mm": 120.0,
+  "location": {
+    "id": 1,
+    "latitude": 29.9511,
+    "longitude": -90.0715
+  },
+  "severity_level": "Severe",
+  "current_velocity": "2.5 m/s",
+  "flood_type": "FLASH_FLOOD"
+}

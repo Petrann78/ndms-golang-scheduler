@@ -1,0 +1,19 @@
+{
+  "richter_magnitude": 6.8,
+  "moment_magnitude": 6.7,
+  "energy_release": 1.2e15,
+  "intensity": "Severe",
+  "timestamp": "2025-04-12T10:30:00Z",
+  "depth_km": 10.5,
+  "damage_level": 4.2,
+  "soil_type": "SANDY",
+  "epicenter": {
+    "latitude": 37.7749,
+    "longitude": -122.4194
+  },
+  "infra_damage": {
+    "roads": "Cracked highways and overpasses",
+    "bridges": "Collapsed suspension bridge",
+    "buildings": "Multiple structural failures in downtown area"
+  }
+}

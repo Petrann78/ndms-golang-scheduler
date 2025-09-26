@@ -1,0 +1,15 @@
+{
+  "wind_speed_kph": 45.6,
+  "wind_direction_deg": 120.0,
+  "temperature_celsius": 35.2,
+  "spread_rate_kph": 10.0,
+  "detected_at": "2025-04-27T14:30:00Z",
+  "location": {
+    "latitude": 34.0522,
+    "longitude": -118.2437
+  },
+  "altitude": 500.0,
+  "size_in_square_km": 25.4,
+  "intensity": "SEVERE",
+  "description": "Rapidly spreading firestorm near LA urban area 3."
+}
