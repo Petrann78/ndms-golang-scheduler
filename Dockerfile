@@ -1,10 +1,6 @@
 FROM golang:1.23.4
-#ARG TARGET_URL
-#ARG INTERVAL
-#ARG BODY_FILE
 WORKDIR /app
 COPY go.mod ./
-#go.sum ./
 RUN go mod download
 COPY main.go ./
 COPY requests/*.json ./

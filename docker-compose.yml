@@ -7,9 +7,5 @@ services:
       - BODY_FILE=earthquake.json
     build: 
       context: .
-      # args: 
-      #   - TARGET_URL=
-      #   - INTERVAL=5
-      #   - BODY_FILE=earthquake.json
     ports:
       - 3000:8080
