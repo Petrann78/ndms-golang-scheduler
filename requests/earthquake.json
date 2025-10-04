@@ -1,15 +1,15 @@
 {
-  "richter_magnitude": 6.8,
-  "moment_magnitude": 6.7,
+  "richter_magnitude": "{{RANDOM_FLOAT 1 10}}",
+  "moment_magnitude": "{{RANDOM_FLOAT 1 10}}",
   "energy_release": 1.2e15,
-  "intensity": "Severe",
-  "timestamp": "2025-04-12T10:30:00Z",
-  "depth_km": 10.5,
-  "damage_level": 4.2,
-  "soil_type": "SANDY",
+  "intensity": "{{CHOICE SMALL,MODERATE,SEVERE}}",
+  "timestamp": "{{NOW}}",
+  "depth_km": "{{RANDOM_FLOAT 1 100}}",
+  "damage_level": "{{RANDOM_FLOAT 1 10}}",
+  "soil_type": "{{CHOICE SANDY,ROCKY}}",
   "epicenter": {
-    "latitude": 37.7749,
-    "longitude": -122.4194
+    "latitude": "{{RANDOM_FLOAT 33 35}}",
+    "longitude": "{{RANDOM_FLOAT -119 -117}}"
   },
   "infra_damage": {
     "roads": "Cracked highways and overpasses",
