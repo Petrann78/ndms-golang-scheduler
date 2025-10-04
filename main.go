@@ -25,13 +25,8 @@ func main() {
 		panic("invalid INTERVAL: " + err.Error())
 	}
 
-	var body []byte
-	if bodyFile := os.Getenv("BODY_FILE"); bodyFile != "" {
-		body, err = os.ReadFile(bodyFile)
-		if err != nil {
-			panic(err)
-		}
-	} else {
+	bodyFile := os.Getenv("BODY_FILE")
+	if bodyFile == "" {
 		panic("BODY_FILE not set (need a JSON file with request body)")
 	}
 
@@ -42,7 +37,19 @@ func main() {
 	defer ticker.Stop()
 
 	for range ticker.C {
-		req, err := http.NewRequest("POST", url, bytes.NewBuffer(body))
+		raw, err := os.ReadFile(bodyFile)
+		if err != nil {
+			fmt.Println("file read error:", err)
+			continue
+		}
+
+		// expand placeholders (string → string)
+		expanded := ReplacePlaceholders(string(raw))
+		// trim
+		expanded = UnquoteNumericPlaceholders(expanded)
+
+		// convert string → []byte for request
+		req, err := http.NewRequest("POST", url, bytes.NewBuffer([]byte(expanded)))
 		if err != nil {
 			fmt.Println("request build error:", err)
 			continue

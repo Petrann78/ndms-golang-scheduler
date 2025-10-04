@@ -1,13 +1,13 @@
 {
-  "soil_moisture_percent": 33.5,
-  "water_level_m": 4.2,
-  "rainfall_mm": 120.0,
+  "soil_moisture_percent": "{{RANDOM_FLOAT 20 80}}",
+  "water_level_m": "{{RANDOM_FLOAT 1 10}}",
+  "rainfall_mm": "{{RANDOM_FLOAT 10 200}}",
   "location": {
-    "id": 1,
-    "latitude": 29.9511,
-    "longitude": -90.0715
+    "latitude": "{{RANDOM_FLOAT 33 35}}",
+    "longitude": "{{RANDOM_FLOAT -119 -117}}"
   },
-  "severity_level": "Severe",
-  "current_velocity": "2.5 m/s",
-  "flood_type": "FLASH_FLOOD"
+  "severity_level": "{{CHOICE SMALL,MODERATE,SEVERE}}",
+  "current_velocity": "{{RANDOM_FLOAT 1 10}} m/s",
+  "flood_type": "FLASH_FLOOD",
+  "timestamp": "{{NOW}}"
 }
