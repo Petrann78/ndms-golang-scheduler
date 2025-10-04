@@ -8,5 +8,6 @@
   },
   "severity_level": "{{CHOICE SMALL,MODERATE,SEVERE}}",
   "current_velocity": "{{RANDOM_FLOAT 1 10}} m/s",
-  "flood_type": "FLASH_FLOOD"
+  "flood_type": "FLASH_FLOOD",
+  "timestamp": "{{NOW}}"
 }
