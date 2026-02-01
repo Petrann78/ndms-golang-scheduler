@@ -7,6 +7,8 @@ import (
 	"net/http"
 	"os"
 	"time"
+	"crypto/tls"
+    "strings"
 )
 
 func main() {
@@ -30,8 +32,18 @@ func main() {
 		panic("BODY_FILE not set (need a JSON file with request body)")
 	}
 
+	skipVerify := strings.ToLower(os.Getenv("SKIP_TLS_VERIFY")) == "true"
+
+    	tr := &http.Transport{}
+    	if skipVerify {
+    		tr.TLSClientConfig = &tls.Config{InsecureSkipVerify: true} // staging only
+    	}
+
 	// Create a HTTP post request
-	client := &http.Client{}
+	client := &http.Client{
+	        Transport: tr,
+    		Timeout:   20 * time.Second,
+	}
 
 	ticker := time.NewTicker(interval)
 	defer ticker.Stop()
